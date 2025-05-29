@@ -12,12 +12,11 @@
   <?php require('inc/header.php'); ?>
 
   <div class="my-5 px-4">
-    <h2 class="fw-bold h-font text-center">CONTACT US</h2>
+    <h2 class="fw-bold h-font text-center">LIÊN HỆ </h2>
     <div class="h-line bg-dark"></div>
     <p class="text-center mt-3">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Temporibus incidunt odio quos <br> dolore commodi repudiandae 
-      tenetur consequuntur et similique asperiores.
+      Nếu có thiếu xót gì chúng tôi thành thật xin error. 
+      <br> Xin hay liên hệ và góp ý với chúng tôi. 
     </p>
   </div>
 
@@ -28,12 +27,12 @@
         <div class="bg-white rounded shadow p-4">
           <iframe class="w-100 rounded mb-4" height="320px" src="<?php echo $contact_r['iframe'] ?>" loading="lazy"></iframe>
 
-          <h5>Address</h5>
+          <h5>Địa Chỉ</h5>
           <a href="<?php echo $contact_r['gmap'] ?>" target="_blank" class="d-inline-block text-decoration-none text-dark mb-2">
             <i class="bi bi-geo-alt-fill"></i> <?php echo $contact_r['address'] ?>
           </a>
 
-          <h5 class="mt-4">Call us</h5>
+          <h5 class="mt-4">Gọi Cho Chúng Tôi</h5>
           <a href="tel: +<?php echo $contact_r['pn1'] ?>" class="d-inline-block mb-2 text-decoration-none text-dark">
             <i class="bi bi-telephone-fill"></i> +<?php echo $contact_r['pn1'] ?>
           </a>
@@ -54,7 +53,7 @@
             <i class="bi bi-envelope-fill"></i> <?php echo $contact_r['email'] ?>
           </a>
 
-          <h5 class="mt-4">Follow us</h5>
+          <h5 class="mt-4">Nền tảng MXH</h5>
           <?php 
             if($contact_r['tw']!=''){
               echo<<<data
@@ -76,9 +75,9 @@
       <div class="col-lg-6 col-md-6 px-4">
         <div class="bg-white rounded shadow p-4">
           <form method="POST">
-            <h5>Send a message</h5>
+            <h5>Gửi lời nhắn</h5>
             <div class="mt-3">
-              <label class="form-label" style="font-weight: 500;">Name</label>
+              <label class="form-label" style="font-weight: 500;">Tên</label>
               <input name="name" required type="text" class="form-control shadow-none">
             </div>
             <div class="mt-3">
@@ -86,14 +85,14 @@
               <input name="email" required type="email" class="form-control shadow-none">
             </div>
             <div class="mt-3">
-              <label class="form-label" style="font-weight: 500;">Subject</label>
+              <label class="form-label" style="font-weight: 500;">Chủ đề</label>
               <input name="subject" required type="text" class="form-control shadow-none">
             </div>
             <div class="mt-3">
-              <label class="form-label" style="font-weight: 500;">Message</label>
+              <label class="form-label" style="font-weight: 500;">Nội dung</label>
               <textarea name="message" required class="form-control shadow-none" rows="5" style="resize: none;"></textarea>
             </div>
-            <button type="submit" name="send" class="btn text-white custom-bg mt-3">SEND</button>
+            <button type="submit" name="send" class="btn text-white custom-bg mt-3">GỬI</button>
           </form>
         </div>
       </div>
@@ -112,10 +111,10 @@
 
       $res = insert($q,$values,'ssss');
       if($res==1){
-        alert('success','Mail sent!');
+        alert('success','Đã gửi Mail!');
       }
       else{
-        alert('error','Server Down! Try again later.');
+        alert('error','Máy chủ đang gặp sự cố! Hãy thử lại sau.');
       }
     }
   ?>

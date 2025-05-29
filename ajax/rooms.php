@@ -19,15 +19,15 @@
       $checkout_date = new DateTime($chk_avail['checkout']);
   
       if($checkin_date == $checkout_date){
-        echo"<h3 class='text-center text-danger'>Invalid Dates Entered!</h3>";
+        echo"<h3 class='text-center text-danger'>Ngày Không Hợp Lệ!</h3>";
         exit;
       }
       else if($checkout_date < $checkin_date){
-        echo"<h3 class='text-center text-danger'>Invalid Dates Entered!</h3>";
+        echo"<h3 class='text-center text-danger'>Ngày Không Hợp Lệ!</h3>";
         exit;
       }
       else if($checkin_date < $today_date){
-        echo"<h3 class='text-center text-danger'>Invalid Dates Entered!</h3>";
+        echo"<h3 class='text-center text-danger'>Ngày Không Hợp Lệ!</h3>";
         exit;
       }
     }
@@ -128,7 +128,7 @@
           $login=1;
         }
 
-        $book_btn = "<button onclick='checkLoginToBook($login,$room_data[id])' class='btn btn-sm w-100 text-white custom-bg shadow-none mb-2'>Book Now</button>";
+        $book_btn = "<button onclick='checkLoginToBook($login,$room_data[id])' class='btn btn-sm w-100 text-white custom-bg shadow-none mb-2'>Đặt ngay</button>";
       }
 
       // print room card
@@ -142,27 +142,27 @@
             <div class='col-md-5 px-lg-3 px-md-3 px-0'>
               <h5 class='mb-3'>$room_data[name]</h5>
               <div class='features mb-3'>
-                <h6 class='mb-1'>Features</h6>
+                <h6 class='mb-1'>Tiện Nghi</h6>
                 $features_data
               </div>
               <div class='facilities mb-3'>
-                <h6 class='mb-1'>Facilities</h6>
+                <h6 class='mb-1'>Tiện Ích</h6>
                 $facilities_data
               </div>
               <div class='guests'>
-                <h6 class='mb-1'>Guests</h6>
+                <h6 class='mb-1'>Số Lượng Khách</h6>
                 <span class='badge rounded-pill bg-light text-dark text-wrap'>
-                  $room_data[adult] Adults
+                  $room_data[adult] Người lớn
                 </span>
                 <span class='badge rounded-pill bg-light text-dark text-wrap'>
-                  $room_data[children] Children
+                  $room_data[children] Trẻ em
                 </span>
               </div>
             </div>
             <div class='col-md-2 mt-lg-0 mt-md-0 mt-4 text-center'>
-              <h6 class='mb-4'>₹$room_data[price] per night</h6>
+              <h6 class='mb-4'>$room_data[price] / Đêm</h6>
               $book_btn
-              <a href='room_details.php?id=$room_data[id]' class='btn btn-sm w-100 btn-outline-dark shadow-none'>More details</a>
+              <a href='room_details.php?id=$room_data[id]' class='btn btn-sm w-100 btn-outline-dark shadow-none'>Chi tiết</a>
             </div>
           </div>
         </div>
@@ -175,7 +175,7 @@
       echo $output;
     }
     else{
-      echo"<h3 class='text-center text-danger'>No rooms to show!</h3>";
+      echo"<h3 class='text-center text-danger'>Không có phòng để hiển thị!</h3>";
     }
 
   }

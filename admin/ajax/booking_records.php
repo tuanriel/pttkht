@@ -9,7 +9,7 @@
   {
     $frm_data = filteration($_POST);
 
-    $limit = 2;
+    $limit = 10;
     $page = $frm_data['page'];
     $start = ($page-1) * $limit;
 
@@ -17,7 +17,8 @@
       INNER JOIN `booking_details` bd ON bo.booking_id = bd.booking_id
       WHERE ((bo.booking_status='booked' AND bo.arrival=1) 
       OR (bo.booking_status='cancelled' AND bo.refund=1)
-      OR (bo.booking_status='payment failed')) 
+      OR (bo.booking_status='payment failed')
+      OR (bo.booking_status='payment_success'))
       AND (bo.order_id LIKE ? OR bd.phonenum LIKE ? OR bd.user_name LIKE ?) 
       ORDER BY bo.booking_id DESC";
 

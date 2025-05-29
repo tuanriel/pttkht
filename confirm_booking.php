@@ -58,13 +58,13 @@
     <div class="row">
 
       <div class="col-12 my-5 mb-4 px-4">
-        <h2 class="fw-bold">CONFIRM BOOKING</h2>
+        <h2 class="fw-bold">XÁC NHẬN ĐẶT PHÒNG</h2>
         <div style="font-size: 14px;">
-          <a href="index.php" class="text-secondary text-decoration-none">HOME</a>
+          <a href="index.php" class="text-secondary text-decoration-none">Trang Chủ</a>
           <span class="text-secondary"> > </span>
-          <a href="rooms.php" class="text-secondary text-decoration-none">ROOMS</a>
+          <a href="rooms.php" class="text-secondary text-decoration-none">Phòng</a>
           <span class="text-secondary"> > </span>
-          <a href="#" class="text-secondary text-decoration-none">CONFIRM</a>
+          <a href="#" class="text-secondary text-decoration-none">Xác Nhận</a>
         </div>
       </div>
 
@@ -85,7 +85,7 @@
             <div class="card p-3 shadow-sm rounded">
               <img src="$room_thumb" class="img-fluid rounded mb-3">
               <h5>$room_data[name]</h5>
-              <h6>₹$room_data[price] per night</h6>
+              <h6>$room_data[price] / Đêm</h6>
             </div>
           data;
 
@@ -96,26 +96,26 @@
         <div class="card mb-4 border-0 shadow-sm rounded-3">
           <div class="card-body">
             <form action="pay_now.php" method="POST" id="booking_form">
-              <h6 class="mb-3">BOOKING DETAILS</h6>
+              <h6 class="mb-3">THÔNG TIN ĐẶT PHÒNG</h6>
               <div class="row">
                 <div class="col-md-6 mb-3">
-                  <label class="form-label">Name</label>
+                  <label class="form-label">Tên</label>
                   <input name="name" type="text" value="<?php echo $user_data['name'] ?>" class="form-control shadow-none" required>
                 </div>
                 <div class="col-md-6 mb-3">
-                  <label class="form-label">Phone Number</label>
+                  <label class="form-label">Số điện thoại</label>
                   <input name="phonenum" type="number" value="<?php echo $user_data['phonenum'] ?>" class="form-control shadow-none" required>
                 </div>
                 <div class="col-md-12 mb-3">
-                  <label class="form-label">Address</label>
+                  <label class="form-label">Địa chỉ</label>
                   <textarea name="address" class="form-control shadow-none" rows="1" required><?php echo $user_data['address'] ?></textarea>
                 </div>
                 <div class="col-md-6 mb-3">
-                  <label class="form-label">Check-in</label>
+                  <label class="form-label">Ngày nhận phòng</label>
                   <input name="checkin" onchange="check_availability()" type="date" class="form-control shadow-none" required>
                 </div>
                 <div class="col-md-6 mb-4">
-                  <label class="form-label">Check-out</label>
+                  <label class="form-label">Ngày trả phòng</label>
                   <input name="checkout" onchange="check_availability()" type="date" class="form-control shadow-none" required>
                 </div>
                 
@@ -124,9 +124,9 @@
                     <span class="visually-hidden">Loading...</span>
                   </div>
 
-                  <h6 class="mb-3 text-danger" id="pay_info">Provide check-in & check-out date !</h6>
+                  <h6 class="mb-3 text-danger" id="pay_info">Yêu cầu chọn ngày nhận và ngày trả phòng !</h6>
 
-                  <button name="pay_now" class="btn w-100 text-white custom-bg shadow-none mb-1" disabled>Pay Now</button>
+                  <button name="pay_now" class="btn w-100 text-white custom-bg shadow-none mb-1" disabled>Thanh toán ngay</button>
                 </div>
               </div>
             </form>
@@ -172,19 +172,19 @@
           let data = JSON.parse(this.responseText);
 
           if(data.status == 'check_in_out_equal'){
-            pay_info.innerText = "You cannot check-out on the same day!";
+            pay_info.innerText = "Không thể trả phòng trùng ngày!";
           }
           else if(data.status == 'check_out_earlier'){
-            pay_info.innerText = "Check-out date is earlier than check-in date!";
+            pay_info.innerText = "Ngày trả phòng sớm hơn ngày nhận phòng!";
           }
           else if(data.status == 'check_in_earlier'){
-            pay_info.innerText = "Check-in date is earlier than today's date!";
+            pay_info.innerText = "Ngày nhận phòng trước ngày hôm nay!";
           }
           else if(data.status == 'unavailable'){
-            pay_info.innerText = "Room not available for this check-in date!";
+            pay_info.innerText = "Phòng không khả thi cho ngày nhận phòng!";
           }
           else{
-            pay_info.innerHTML = "No. of Days: "+data.days+"<br>Total Amount to Pay: ₹"+data.payment;
+            pay_info.innerHTML = "Số ngày: "+data.days+"<br>Tổng tiền: "+data.payment;
             pay_info.classList.replace('text-danger','text-dark');
             booking_form.elements['pay_now'].removeAttribute('disabled');
           }

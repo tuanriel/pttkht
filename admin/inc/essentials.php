@@ -2,7 +2,7 @@
 
   //frontend purpose data
 
-  define('SITE_URL','http://127.0.0.1/hbwebsite/');
+  define('SITE_URL','http://127.0.0.1/Booking_hotel/');
   define('ABOUT_IMG_PATH',SITE_URL.'images/about/');
   define('CAROUSEL_IMG_PATH',SITE_URL.'images/carousel/');
   define('FACILITIES_IMG_PATH',SITE_URL.'images/facilities/');
@@ -12,7 +12,7 @@
 
   //backend upload process needs this data
 
-  define('UPLOAD_IMAGE_PATH',$_SERVER['DOCUMENT_ROOT'].'/hbwebsite/images/');
+  define('UPLOAD_IMAGE_PATH',$_SERVER['DOCUMENT_ROOT'].'/Booking_hotel/images/');
   define('ABOUT_FOLDER','about/');
   define('CAROUSEL_FOLDER','carousel/');
   define('FACILITIES_FOLDER','facilities/');
@@ -21,9 +21,9 @@
 
   // sendgrid api key
 
-  define('SENDGRID_API_KEY',"PASTE YOUR API KEY GENERATED FROM SENDGRID WEBSITE");
-  define('SENDGRID_EMAIL',"PUT YOU EMAIL");
-  define('SENDGRID_NAME',"ANY NAME");
+  define('SENDGRID_API_KEY',""); 
+  define('SENDGRID_EMAIL',"leanhtuan7112@gmail.com");
+  define('SENDGRID_NAME',"Le Tua");
 
   // Possible "booking status" values in db = pending, booked, payment failed, cancelled
   

@@ -29,7 +29,7 @@
   ?>
 
   <div class="my-5 px-4">
-    <h2 class="fw-bold h-font text-center">OUR ROOMS</h2>
+    <h2 class="fw-bold h-font text-center">PHÒNG</h2>
     <div class="h-line bg-dark"></div>
   </div>
 
@@ -39,7 +39,7 @@
       <div class="col-lg-3 col-md-12 mb-lg-0 mb-4 ps-4">
         <nav class="navbar navbar-expand-lg navbar-light bg-white rounded shadow">
           <div class="container-fluid flex-lg-column align-items-stretch">
-            <h4 class="mt-2">FILTERS</h4>
+            <h4 class="mt-2">BỘ LỌC</h4>
             <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#filterDropdown" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -47,20 +47,20 @@
               <!-- Check availablity -->
               <div class="border bg-light p-3 rounded mb-3">
                 <h5 class="d-flex align-items-center justify-content-between mb-3" style="font-size: 18px;">
-                  <span>CHECK AVAILABILITY</span>
-                  <button id="chk_avail_btn" onclick="chk_avail_clear()" class="btn shadow-none btn-sm text-secondary d-none">Reset</button>
+                  <span>KIỂM TRA PHÒNG TRỐNG</span>
+                  <button id="chk_avail_btn" onclick="chk_avail_clear()" class="btn shadow-none btn-sm text-secondary d-none">Xóa hết</button>
                 </h5>
-                <label class="form-label">Check-in</label>
+                <label class="form-label">Ngày nhận phòng</label>
                 <input type="date" class="form-control shadow-none mb-3" value="<?php echo $checkin_default ?>" id="checkin" onchange="chk_avail_filter()">
-                <label class="form-label">Check-out</label>
+                <label class="form-label">Ngày trả phòng</label>
                 <input type="date" class="form-control shadow-none" value="<?php echo $checkout_default ?>"  id="checkout" onchange="chk_avail_filter()">
               </div>
 
               <!-- Facilities -->
               <div class="border bg-light p-3 rounded mb-3">
                 <h5 class="d-flex align-items-center justify-content-between mb-3" style="font-size: 18px;">
-                  <span>FACILITIES</span>
-                  <button id="facilities_btn" onclick="facilities_clear()" class="btn shadow-none btn-sm text-secondary d-none">Reset</button>
+                  <span>TIỆN ÍCH</span>
+                  <button id="facilities_btn" onclick="facilities_clear()" class="btn shadow-none btn-sm text-secondary d-none">Xóa hết</button>
                 </h5>
                 <?php 
                   $facilities_q = selectAll('facilities');
@@ -79,16 +79,16 @@
               <!-- Guests -->
               <div class="border bg-light p-3 rounded mb-3">
                 <h5 class="d-flex align-items-center justify-content-between mb-3" style="font-size: 18px;">
-                  <span>GUESTS</span>
-                  <button id="guests_btn" onclick="guests_clear()" class="btn shadow-none btn-sm text-secondary d-none">Reset</button>
+                  <span>SỐ LƯỢNG KHÁCH</span>
+                  <button id="guests_btn" onclick="guests_clear()" class="btn shadow-none btn-sm text-secondary d-none">Xóa hết</button>
                 </h5>
                 <div class="d-flex">
                   <div class="me-3">
-                    <label class="form-label">Adults</label>
+                    <label class="form-label">Người lớn</label>
                     <input type="number" min="1" id="adults" value="<?php echo $adult_default ?>" oninput="guests_filter()" class="form-control shadow-none">                 
                   </div>
                   <div>
-                    <label class="form-label">Children</label>
+                    <label class="form-label">Trẻ em</label>
                     <input type="number" min="1" id="children" value="<?php echo $children_default ?>" oninput="guests_filter()" class="form-control shadow-none">                 
                   </div>
                 </div>

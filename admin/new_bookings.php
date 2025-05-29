@@ -19,7 +19,7 @@
   <div class="container-fluid" id="main-content">
     <div class="row">
       <div class="col-lg-10 ms-auto p-4 overflow-hidden">
-        <h3 class="mb-4">NEW BOOKINGS</h3>
+        <h3 class="mb-4">YÊU CẦU ĐẶT PHÒNG</h3>
 
         <div class="card border-0 shadow-sm mb-4">
           <div class="card-body">
@@ -33,10 +33,10 @@
                 <thead>
                   <tr class="bg-dark text-light">
                     <th scope="col">#</th>
-                    <th scope="col">User Details</th>
-                    <th scope="col">Room Details</th>
-                    <th scope="col">Bookings Details</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">Thông tin kngười dùng</th>
+                    <th scope="col">Thông tin phòng</th>
+                    <th scope="col">Thông tin đặt phòng</th>
+                    <th scope="col">Lựa chọn</th>
                   </tr>
                 </thead>
                 <tbody id="table-data">                 
@@ -60,21 +60,21 @@
       <form id="assign_room_form">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Assign Room</h5>
+            <h5 class="modal-title">Chuyển trạng thái phòng</h5>
           </div>
           <div class="modal-body">
             <div class="mb-3">
-              <label class="form-label fw-bold">Room Number</label>
+              <label class="form-label fw-bold">Số phòng</label>
               <input type="text" name="room_no" class="form-control shadow-none" required>
             </div>
             <span class="badge rounded-pill bg-light text-dark mb-3 text-wrap lh-base">
-              Note: Assign Room Number only when user has been arrived!
+              Lưu ý: Chỉ chuyển trạng thái khi khách đã đến nhận phòng!
             </span>
             <input type="hidden" name="booking_id">
           </div>
           <div class="modal-footer">
-            <button type="reset" class="btn text-secondary shadow-none" data-bs-dismiss="modal">CANCEL</button>
-            <button type="submit" class="btn custom-bg text-white shadow-none">ASSIGN</button>
+            <button type="reset" class="btn text-secondary shadow-none" data-bs-dismiss="modal">HỦY BỎ</button>
+            <button type="submit" class="btn custom-bg text-white shadow-none">CHUYỂN</button>
           </div>
         </div>
       </form>

@@ -15,7 +15,8 @@
       INNER JOIN `user_cred` uc ON bo.user_id = uc.id
       WHERE ((bo.booking_status='booked' AND bo.arrival=1) 
       OR (bo.booking_status='cancelled' AND bo.refund=1)
-      OR (bo.booking_status='payment failed')) 
+      OR (bo.booking_status='payment failed')
+      OR (bo.booking_status='payment_success')) 
       AND bo.booking_id = '$frm_data[id]'";
 
     $res = mysqli_query($con,$query);

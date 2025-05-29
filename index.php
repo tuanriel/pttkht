@@ -52,19 +52,19 @@
   <div class="container availability-form">
     <div class="row">
       <div class="col-lg-12 bg-white shadow p-4 rounded">
-        <h5 class="mb-4">Check Booking Availability</h5>
+        <h5 class="mb-4">Tìm Phòng</h5>
         <form action="rooms.php">
           <div class="row align-items-end">
             <div class="col-lg-3 mb-3">
-              <label class="form-label" style="font-weight: 500;">Check-in</label>
+              <label class="form-label" style="font-weight: 500;">Ngày nhận phòng</label>
               <input type="date" class="form-control shadow-none" name="checkin" required>
             </div>
             <div class="col-lg-3 mb-3">
-              <label class="form-label" style="font-weight: 500;">Check-out</label>
+              <label class="form-label" style="font-weight: 500;">Ngày trả phòng</label>
               <input type="date" class="form-control shadow-none" name="checkout" required>
             </div>
             <div class="col-lg-3 mb-3">
-              <label class="form-label" style="font-weight: 500;">Adult</label>
+              <label class="form-label" style="font-weight: 500;">Người lớn</label>
               <select class="form-select shadow-none" name="adult">
                 <?php 
                   $guests_q = mysqli_query($con,"SELECT MAX(adult) AS `max_adult`, MAX(children) AS `max_children` 
@@ -78,7 +78,7 @@
               </select>
             </div>
             <div class="col-lg-2 mb-3">
-              <label class="form-label" style="font-weight: 500;">Children</label>
+              <label class="form-label" style="font-weight: 500;">Trẻ em</label>
               <select class="form-select shadow-none" name="children">
                 <?php 
                   for($i=1; $i<=$guests_res['max_children']; $i++){
@@ -89,7 +89,7 @@
             </div>
             <input type="hidden" name="check_availability">
             <div class="col-lg-1 mb-lg-3 mt-2">
-              <button type="submit" class="btn text-white shadow-none custom-bg">Submit</button>
+              <button type="submit" class="btn text-white shadow-none custom-bg">Tìm Phòng</button>
             </div>
           </div>
         </form>
@@ -99,7 +99,7 @@
 
   <!-- Our Rooms -->
 
-  <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">OUR ROOMS</h2>
+  <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">PHÒNG</h2>
 
   <div class="container">
     <div class="row">
@@ -156,7 +156,7 @@
               $login=1;
             }
 
-            $book_btn = "<button onclick='checkLoginToBook($login,$room_data[id])' class='btn btn-sm text-white custom-bg shadow-none'>Book Now</button>";
+            $book_btn = "<button onclick='checkLoginToBook($login,$room_data[id])' class='btn btn-sm text-white custom-bg shadow-none'>Đặt Ngay</button>";
           }
 
           $rating_q = "SELECT AVG(rating) AS `avg_rating` FROM `rating_review`
@@ -170,7 +170,7 @@
           if($rating_fetch['avg_rating']!=NULL)
           {
             $rating_data = "<div class='rating mb-4'>
-              <h6 class='mb-1'>Rating</h6>
+              <h6 class='mb-1'>Đánh giá</h6>
               <span class='badge rounded-pill bg-light'>
             ";
 
@@ -191,28 +191,28 @@
                 <img src="$room_thumb" class="card-img-top">
                 <div class="card-body">
                   <h5>$room_data[name]</h5>
-                  <h6 class="mb-4">₹$room_data[price] per night</h6>
+                  <h6 class="mb-4">$room_data[price] / Đêm</h6>
                   <div class="features mb-4">
-                    <h6 class="mb-1">Features</h6>
+                    <h6 class="mb-1">Tiện Nghi</h6>
                     $features_data
                   </div>
                   <div class="facilities mb-4">
-                    <h6 class="mb-1">Facilities</h6>
+                    <h6 class="mb-1">Tiện Ích</h6>
                     $facilities_data
                   </div>
                   <div class="guests mb-4">
-                    <h6 class="mb-1">Guests</h6>
+                    <h6 class="mb-1">Số Lượng Khách</h6>
                     <span class="badge rounded-pill bg-light text-dark text-wrap">
-                      $room_data[adult] Adults
+                      $room_data[adult] Người lớn
                     </span>
                     <span class="badge rounded-pill bg-light text-dark text-wrap">
-                      $room_data[children] Children
+                      $room_data[children] Trẻ em
                     </span>
                   </div>
                   $rating_data
                   <div class="d-flex justify-content-evenly mb-2">
                     $book_btn
-                    <a href="room_details.php?id=$room_data[id]" class="btn btn-sm btn-outline-dark shadow-none">More details</a>
+                    <a href="room_details.php?id=$room_data[id]" class="btn btn-sm btn-outline-dark shadow-none">Chi tiết</a>
                   </div>
                 </div>
               </div>
@@ -224,14 +224,14 @@
       ?>
 
       <div class="col-lg-12 text-center mt-5">
-        <a href="rooms.php" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none">More Rooms >>></a>
+        <a href="rooms.php" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none">Xem thêm >>></a>
       </div>
     </div>
   </div>
 
   <!-- Our Facilities -->
 
-  <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">OUR FACILITIES</h2>
+  <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">Các Tiện Ích</h2>
 
   <div class="container">
     <div class="row justify-content-evenly px-lg-0 px-md-0 px-5">
@@ -250,14 +250,14 @@
       ?>
 
       <div class="col-lg-12 text-center mt-5">
-        <a href="facilities.php" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none">More Facilities >>></a>
+        <a href="facilities.php" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none">Tiện ích khác >>></a>
       </div>
     </div>
   </div>
 
   <!-- Testimonials -->
 
-  <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">TESTIMONIALS</h2>
+  <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">Đánh Giá</h2>
 
   <div class="container mt-5">
     <div class="swiper swiper-testimonials">
@@ -306,13 +306,13 @@
       <div class="swiper-pagination"></div>
     </div>
     <div class="col-lg-12 text-center mt-5">
-      <a href="about.php" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none">Know More >>></a>
+      <a href="about.php" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none">Tìm hiểu thêm >>></a>
     </div>
   </div>
 
   <!-- Reach us -->
 
-  <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">REACH US</h2>
+  <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">Liên hệ</h2>
 
   <div class="container">
     <div class="row">
@@ -321,7 +321,7 @@
       </div>
       <div class="col-lg-4 col-md-4">
         <div class="bg-white p-4 rounded mb-4">
-          <h5>Call us</h5>
+          <h5>Gọi chúng tôi</h5>
           <a href="tel: +<?php echo $contact_r['pn1'] ?>" class="d-inline-block mb-2 text-decoration-none text-dark">
             <i class="bi bi-telephone-fill"></i> +<?php echo $contact_r['pn1'] ?>
           </a>
@@ -338,7 +338,7 @@
           ?>
         </div>
         <div class="bg-white p-4 rounded mb-4">
-          <h5>Follow us</h5>
+          <h5>Theo dõi chúng tôi</h5>
           <?php 
             if($contact_r['tw']!=''){
               echo<<<data
@@ -425,7 +425,7 @@
         showModal;
       }
       else{
-        alert("error","Invalid or Expired Link !");
+        alert("error","Liên kết không hợp lệ hoặc đã hết hạn !");
       }
 
     }
@@ -501,10 +501,10 @@
 
       xhr.onload = function(){
         if(this.responseText == 'failed'){
-          alert('error',"Account reset failed!");
+          alert('error',"Đặt lại tài khoản thất bại!");
         }
         else{
-          alert('success',"Account Reset Successful !");
+          alert('success',"Đặt lại tài khoản thành công !");
           recovery_form.reset();
         }
       }

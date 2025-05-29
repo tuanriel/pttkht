@@ -19,12 +19,11 @@
   <?php require('inc/header.php'); ?>
 
   <div class="my-5 px-4">
-    <h2 class="fw-bold h-font text-center">OUR FACILITIES</h2>
+    <h2 class="fw-bold h-font text-center">CÁC TIỆN ÍCH</h2>
     <div class="h-line bg-dark"></div>
     <p class="text-center mt-3">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Temporibus incidunt odio quos <br> dolore commodi repudiandae 
-      tenetur consequuntur et similique asperiores.
+      Kính thưa quý khách, quý khách có thể lưa chọn sử dụng các dịch vụ của chúng tôi. 
+      <br> Bao gồm các loại dịch vụ khác nhau : 
     </p>
   </div>
 

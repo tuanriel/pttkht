@@ -18,7 +18,7 @@
   <?php require('inc/header.php'); ?>
 
   <div class="my-5 px-4">
-    <h2 class="fw-bold h-font text-center">ABOUT US</h2>
+    <h2 class="fw-bold h-font text-center">VỀ CHÚNG TÔI</h2>
     <div class="h-line bg-dark"></div>
     <p class="text-center mt-3">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. 
@@ -39,7 +39,7 @@
         </p>
       </div>
       <div class="col-lg-5 col-md-5 mb-4 order-lg-2 order-md-2 order-1">
-        <img src="images/about/about.jpg" class="w-100">
+        <img src="" class="w-100">
       </div>
     </div>
   </div>
@@ -49,31 +49,31 @@
       <div class="col-lg-3 col-md-6 mb-4 px-4">
         <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
           <img src="images/about/hotel.svg" width="70px">
-          <h4 class="mt-3">100+ ROOMS</h4>
+          <h4 class="mt-3">100+ PHÒNG</h4>
         </div>
       </div>
       <div class="col-lg-3 col-md-6 mb-4 px-4">
         <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
           <img src="images/about/customers.svg" width="70px">
-          <h4 class="mt-3">200+ CUSTOMERS</h4>
+          <h4 class="mt-3">200+ KHÁCH HÀNG</h4>
         </div>
       </div>
       <div class="col-lg-3 col-md-6 mb-4 px-4">
         <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
           <img src="images/about/rating.svg" width="70px">
-          <h4 class="mt-3">150+ REVIEWS</h4>
+          <h4 class="mt-3">150+ ĐÁNH GIÁ</h4>
         </div>
       </div>
       <div class="col-lg-3 col-md-6 mb-4 px-4">
         <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
           <img src="images/about/staff.svg" width="70px">
-          <h4 class="mt-3">200+ STAFFS</h4>
+          <h4 class="mt-3">200+ NHÂN VIÊN</h4>
         </div>
       </div>
     </div>
   </div>
 
-  <h3 class="my-5 fw-bold h-font text-center">MANAGEMENT TEAM</h3>
+  <h3 class="my-5 fw-bold h-font text-center">ĐỘI NGŨ QUẢN LÝ</h3>
 
   <div class="container px-4">
     <div class="swiper mySwiper">
@@ -82,12 +82,12 @@
           $about_r = selectAll('team_details');
           $path=ABOUT_IMG_PATH;
           while($row = mysqli_fetch_assoc($about_r)){
-            echo<<<data
+            /*echo<<<data
               <div class="swiper-slide bg-white text-center overflow-hidden rounded">
                 <img src="$path$row[picture]" class="w-100">
                 <h5 class="mt-2">$row[name]</h5>
               </div>
-            data;
+            data;*/
           }
         
         ?>
