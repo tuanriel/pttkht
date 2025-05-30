@@ -1,3 +1,8 @@
+
+function formatVND(amount) {
+  return parseInt(amount).toLocaleString('vi-VN') + ' ₫';
+}
+
 function booking_analytics(period=1)
 {
   let xhr = new XMLHttpRequest();
@@ -6,16 +11,18 @@ function booking_analytics(period=1)
 
   xhr.onload = function(){
     let data = JSON.parse(this.responseText);
+
+    
+    console.log('data from server:', data);
     document.getElementById('total_bookings').textContent = data.total_bookings;
-    document.getElementById('total_amt').textContent = '₹'+data.total_amt;
+    document.getElementById('total_amt').textContent = formatVND(data.total_amt);
 
     document.getElementById('active_bookings').textContent = data.active_bookings;
-    document.getElementById('active_amt').textContent = '₹'+data.active_amt;
+    document.getElementById('active_amt').textContent = formatVND(data.active_amt);
     
     document.getElementById('cancelled_bookings').textContent = data.cancelled_bookings;
-    document.getElementById('cancelled_amt').textContent = '₹'+data.cancelled_amt;
+    document.getElementById('cancelled_amt').textContent = formatVND(data.cancelled_amt);
   }
-
   xhr.send('booking_analytics&period='+period);
 }
 

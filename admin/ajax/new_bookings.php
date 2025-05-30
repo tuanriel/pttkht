@@ -44,14 +44,14 @@
           <td>
             <b>Room:</b> $data[room_name]
             <br>
-            <b>Price:</b> ₹$data[price]
+            <b>Price:</b> $data[price] vnd
           </td>
           <td>
             <b>Check-in:</b> $checkin
             <br>
             <b>Check-out:</b> $checkout
             <br>
-            <b>Paid:</b> ₹$data[trans_amt]
+            <b>Paid:</b> $data[trans_amt] vnd
             <br>
             <b>Date:</b> $date
           </td>

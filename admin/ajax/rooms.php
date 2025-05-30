@@ -82,7 +82,7 @@
         <tr class='align-middle'>
           <td>$i</td>
           <td>$row[name]</td>
-          <td>$row[area] sq. ft.</td>
+          <td>$row[area]  m2.</td>
           <td>
             <span class='badge rounded-pill bg-light text-dark'>
               Adult: $row[adult]
@@ -91,7 +91,7 @@
               Children: $row[children]
             </span>
           </td>
-          <td>₹$row[price]</td>
+          <td>$row[price] vnd</td>
           <td>$row[quantity]</td>
           <td>$status</td>
           <td>

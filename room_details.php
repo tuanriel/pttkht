@@ -91,7 +91,7 @@
             <?php 
 
               echo<<<price
-                <h4>$room_data[price] / Đêm</h4>
+                <h4>$room_data[price] vnd / Đêm</h4>
               price;
 
               $rating_q = "SELECT AVG(rating) AS `avg_rating` FROM `rating_review`

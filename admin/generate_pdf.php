@@ -17,7 +17,7 @@
       OR (bo.booking_status='cancelled' AND bo.refund=1)
       OR (bo.booking_status='payment failed')
       OR (bo.booking_status='payment_success')) 
-      AND bo.booking_id = '$frm_data[id]'";
+      AND bo.booking_id = '$frm_data[id]'"; 
 
     $res = mysqli_query($con,$query);
     $total_rows = mysqli_num_rows($res);
