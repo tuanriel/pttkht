@@ -33,11 +33,11 @@
                 <thead>
                   <tr class="bg-dark text-light">
                     <th scope="col">#</th>
-                    <th scope="col">User Details</th>
-                    <th scope="col">Room Details</th>
-                    <th scope="col">Bookings Details</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">Thông tin kngười dùng</th>
+                    <th scope="col">Thông tin phòng</th>
+                    <th scope="col">Thông tin đặt phòng	</th>
+                    <th scope="col">Trạng thái</th>
+                    <th scope="col">Hành động</th>
                   </tr>
                 </thead>
                 <tbody id="table-data">                 

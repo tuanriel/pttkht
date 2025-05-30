@@ -69,9 +69,17 @@
       'total_new_reg' => $total_new_reg['count']
     ];
 
-    $output = json_encode($output);
+    $output = [
+      'total_bookings' => (int)$result['total_bookings'],
+      'total_amt' => (int)$result['total_amt'],
+      'active_bookings' => (int)$result['active_bookings'],
+      'active_amt' => (int)$result['active_amt'],
+      'cancelled_bookings' => (int)$result['cancelled_bookings'],
+      'cancelled_amt' => (int)$result['cancelled_amt']
+    ];
 
-    echo $output;
+    echo json_encode($output);
+
 
   }
 
