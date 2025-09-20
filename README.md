@@ -1,2 +1,2 @@
-secret.infrastructure.1.flowproxies.com:10959:qqXFAPHFnrq5y6H_c_NG_s_0QNO4O5IPK:2zl1bCIA
+secret.infrastructure.2.flowproxies.com:10959:qqXFAPHFnrq5y6H_c_IN_s_8NWOAD9DMN:2zl1bCIA
 auwaluusena@gmail.com
