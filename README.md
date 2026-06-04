@@ -1,2 +1,2 @@
-secret.infrastructure.2.flowproxies.com:10959:qqXFAPHFnrq5y6H_c_IN_s_8NWOAD9DMN:2zl1bCIA
-auwaluusena@gmail.com
+sinhvien.huce.edu.vn
+chatgpt.com
